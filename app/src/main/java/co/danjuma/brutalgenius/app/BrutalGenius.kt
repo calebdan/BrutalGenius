@@ -5,10 +5,13 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -86,7 +89,11 @@ fun BrutalGeniusApp() {
                     Text(
                         text = "Start Game",
                         fontSize = 19.sp,
-                        fontFamily = vinaSans
+                        fontFamily = vinaSans,
+                        modifier = Modifier.clickable {
+
+
+                        }
                     )
 
                 }
@@ -98,6 +105,39 @@ fun BrutalGeniusApp() {
                     fontWeight = FontWeight.Bold
                 )
             }
+
+
+        }
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(15.dp),
+            verticalAlignment = Alignment.Bottom,
+            horizontalArrangement = Arrangement.End
+        ) {
+            Image(
+                painterResource(id = R.drawable.question_mark),
+                contentDescription = "Settings",
+                modifier = Modifier
+
+                    .size(width = 50.dp, height = 50.dp)
+                    .clip(RoundedCornerShape(10.dp))
+                    .background(GreyColor)
+                    .border(
+                        border = BorderStroke(width = 3.dp, color = Color.Black),
+                        shape = RoundedCornerShape(10.dp)
+                    )
+                    .clip(RoundedCornerShape(30.dp))
+                    .shadow(
+                        elevation = 40.dp,
+                        shape = RectangleShape,
+                        ambientColor = Color.Black
+                    )
+                    .padding(10.dp)
+
+            )
+
         }
     }
 }

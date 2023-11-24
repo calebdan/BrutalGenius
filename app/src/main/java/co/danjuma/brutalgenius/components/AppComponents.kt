@@ -18,10 +18,12 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import co.danjuma.brutalgenius.ui.theme.GreyColor
 import co.danjuma.brutalgenius.R
+import co.danjuma.brutalgenius.ui.theme.TextGrey
 import co.danjuma.brutalgenius.ui.theme.vinaSans
 
 @Composable
@@ -31,9 +33,11 @@ fun HeaderText(text: String) {
     Text(
 
         text = text,
-        fontSize = 40.sp,
-        fontFamily = vinaSans
-       // fontFamily = vina
+        fontSize = 35.sp,
+        fontFamily = vinaSans,
+        color = TextGrey
+      //  fontWeight = FontWeight.Bold
+
 
 
         )
@@ -42,7 +46,7 @@ fun HeaderText(text: String) {
 @Composable
 fun TopSectionApp() {
 
-    Row {
+    Row(modifier = Modifier.fillMaxWidth()) {
         Image(
             painterResource(id = R.drawable.settings),
             contentDescription = "Settings",
