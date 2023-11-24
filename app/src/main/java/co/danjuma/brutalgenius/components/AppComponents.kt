@@ -6,6 +6,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,18 +22,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import co.danjuma.brutalgenius.ui.theme.GreyColor
 import co.danjuma.brutalgenius.R
+import co.danjuma.brutalgenius.ui.theme.vinaSans
 
 @Composable
 fun HeaderText(text: String) {
 
 
     Text(
+
         text = text,
-        fontSize = 35.sp,
+        fontSize = 40.sp,
+        fontFamily = vinaSans
+       // fontFamily = vina
 
 
         )
-
 }
 
 @Composable
