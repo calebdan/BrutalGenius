@@ -15,10 +15,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.Shadow
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.drawscope.DrawStyle
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import co.danjuma.brutalgenius.ui.theme.GreyColor
@@ -28,19 +35,28 @@ import co.danjuma.brutalgenius.ui.theme.vinaSans
 
 @Composable
 fun HeaderText(text: String) {
-
+    val offset = Offset(7.0f, -9.0f)
 
     Text(
 
+
         text = text,
-        fontSize = 35.sp,
+
         fontFamily = vinaSans,
-        color = TextGrey
-      //  fontWeight = FontWeight.Bold
-
-
-
-        )
+        color = TextGrey,
+        style = TextStyle.Default.copy(
+            fontSize = 35.sp,
+            shadow = Shadow(
+                color = Color.Red,
+                offset = offset
+            ),
+            drawStyle = Stroke(
+                miter = 10f,
+                width = 2f,
+                join = StrokeJoin.Round
+            )
+        ),
+    )
 }
 
 @Composable
@@ -72,4 +88,10 @@ fun TopSectionApp() {
     }
 
 
+}
+
+@Preview(showBackground = true)
+@Composable
+fun AppComponentsPreview() {
+    HeaderText(text = "Test")
 }
