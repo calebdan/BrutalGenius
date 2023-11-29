@@ -35,28 +35,41 @@ import co.danjuma.brutalgenius.ui.theme.vinaSans
 
 @Composable
 fun HeaderText(text: String) {
-    val offset = Offset(7.0f, -9.0f)
+    val offset = Offset(5.0f, -5.0f)
 
     Text(
-
-
         text = text,
-
         fontFamily = vinaSans,
         color = TextGrey,
         style = TextStyle.Default.copy(
-            fontSize = 35.sp,
-            shadow = Shadow(
-                color = Color.Red,
-                offset = offset
-            ),
-            drawStyle = Stroke(
-                miter = 10f,
-                width = 2f,
-                join = StrokeJoin.Round
+            fontSize = 35.sp, shadow = Shadow(
+                color = Color.Red, offset = offset
             )
         ),
     )
+}
+
+@Composable
+fun SubHeaderText(text: String) {
+    val offset = Offset(5.0f, -5.0f)
+
+    Text(
+        text = text,
+        fontFamily = vinaSans,
+        color = TextGrey,
+        style = TextStyle.Default.copy(
+            fontSize = 30.sp,
+            shadow = Shadow(
+                color = Color.Black, offset = offset
+            )
+        ),
+    )
+}
+
+
+@Composable
+fun CountDowntimerText(){
+    Text(text = "1:00")
 }
 
 @Composable
@@ -77,9 +90,7 @@ fun TopSectionApp() {
                 )
                 .clip(RoundedCornerShape(30.dp))
                 .shadow(
-                    elevation = 40.dp,
-                    shape = RectangleShape,
-                    ambientColor = Color.Black
+                    elevation = 40.dp, shape = RectangleShape, ambientColor = Color.Black
                 )
                 .padding(10.dp)
 

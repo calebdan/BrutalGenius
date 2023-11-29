@@ -7,6 +7,7 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import co.danjuma.brutalgenius.app.BrutalGeniusApp
+import co.danjuma.brutalgenius.navigation.ComposeNavigation
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,8 +17,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
 
-            BrutalGeniusApp()
-
+           ComposeNavigation()
 
         }
     }

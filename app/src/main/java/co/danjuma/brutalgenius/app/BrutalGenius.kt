@@ -32,6 +32,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import co.danjuma.brutalgenius.R
 import co.danjuma.brutalgenius.components.HeaderText
 import co.danjuma.brutalgenius.components.TopSectionApp
@@ -40,11 +42,11 @@ import co.danjuma.brutalgenius.ui.theme.GreyColor
 import co.danjuma.brutalgenius.ui.theme.vinaSans
 
 @Composable
-fun BrutalGeniusApp() {
+fun BrutalGeniusApp(navController: NavHostController) {
     Surface(
-        modifier = Modifier.fillMaxSize(), color = BGYellow
+        modifier = Modifier.fillMaxSize(),
+        color = BGYellow
     ) {
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -72,27 +74,32 @@ fun BrutalGeniusApp() {
                 Spacer(modifier = Modifier.height(90.dp))
 
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = {
+                        /*TODO*/
+                    },
                     shape = RoundedCornerShape(25.dp),
                     colors = ButtonDefaults.buttonColors(
                         contentColor = Color(0xFFF5F5F3),
                         containerColor = Color(0xFF323232)
                     ),
-
-                    modifier = Modifier.size(
-                        width = 230.dp,
-                        height = 65.dp
-                    )
-
+                    modifier = Modifier
+                        .size(
+                            width = 230.dp,
+                            height = 65.dp
+                        )
+                        .border(
+                            width = 4.dp,
+                            color = Color.Black,
+                            shape = RoundedCornerShape(25.dp)
+                        )
                 ) {
-
                     Text(
                         text = "Start Game",
                         fontSize = 19.sp,
                         fontFamily = vinaSans,
                         modifier = Modifier.clickable {
 
-
+                            /*TODO*/
                         }
                     )
 
@@ -105,8 +112,6 @@ fun BrutalGeniusApp() {
                     fontWeight = FontWeight.Bold
                 )
             }
-
-
         }
 
         Row(
@@ -120,7 +125,6 @@ fun BrutalGeniusApp() {
                 painterResource(id = R.drawable.question_mark),
                 contentDescription = "Settings",
                 modifier = Modifier
-
                     .size(width = 50.dp, height = 50.dp)
                     .clip(RoundedCornerShape(10.dp))
                     .background(GreyColor)
@@ -135,7 +139,6 @@ fun BrutalGeniusApp() {
                         ambientColor = Color.Black
                     )
                     .padding(10.dp)
-
             )
 
         }
@@ -146,5 +149,6 @@ fun BrutalGeniusApp() {
 @Preview
 @Composable
 fun BrutalAppPreview() {
-    BrutalGeniusApp()
+    val navController = rememberNavController()
+    BrutalGeniusApp(navController)
 }
