@@ -6,17 +6,17 @@ package co.danjuma.brutalgenius.data
             return listOf(
                 Question(
                     "What is the capital of France?",
-                    listOf("Berlin", "Madrid", "Paris", "Rome"),
+                    listOf("Berlin", "Madrid", "Paris"),
                     "Paris"
                 ),
                 Question(
                     "Which planet is known as the Red Planet?",
-                    listOf("Venus", "Mars", "Jupiter", "Saturn"),
+                    listOf("Venus", "Mars", "Jupiter"),
                     "Mars"
                 ),
                 Question(
                     "What is the largest mammal on Earth?",
-                    listOf("Elephant", "Blue Whale", "Giraffe", "Hippopotamus"),
+                    listOf("Elephant", "Blue Whale", "Giraffe"),
                     "Blue Whale"
                 ),
                 // Add more questions as needed

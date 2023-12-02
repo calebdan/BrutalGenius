@@ -43,3 +43,9 @@ labelSmall = TextStyle(
 val vinaSans =
     FontFamily( Font(R.font.vinasans_regular, FontWeight.Normal))
 
+val montserrat =
+    FontFamily( Font(R.font.montserrat_regular, FontWeight.Normal))
+
+val kanti =
+    FontFamily( Font(R.font.kanit_regular, FontWeight.Normal))
+

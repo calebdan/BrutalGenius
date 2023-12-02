@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.drawscope.DrawStyle
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -31,6 +32,8 @@ import androidx.compose.ui.unit.sp
 import co.danjuma.brutalgenius.ui.theme.GreyColor
 import co.danjuma.brutalgenius.R
 import co.danjuma.brutalgenius.ui.theme.TextGrey
+import co.danjuma.brutalgenius.ui.theme.kanti
+import co.danjuma.brutalgenius.ui.theme.montserrat
 import co.danjuma.brutalgenius.ui.theme.vinaSans
 
 @Composable
@@ -39,10 +42,10 @@ fun HeaderText(text: String) {
 
     Text(
         text = text,
-        fontFamily = vinaSans,
+        fontFamily = kanti,
         color = TextGrey,
         style = TextStyle.Default.copy(
-            fontSize = 35.sp, shadow = Shadow(
+            fontSize = 25.sp, shadow = Shadow(
                 color = Color.Red, offset = offset
             )
         ),
@@ -55,10 +58,10 @@ fun SubHeaderText(text: String) {
 
     Text(
         text = text,
-        fontFamily = vinaSans,
+        fontFamily = kanti,
         color = TextGrey,
         style = TextStyle.Default.copy(
-            fontSize = 30.sp,
+            fontSize = 20.sp,
             shadow = Shadow(
                 color = Color.Black, offset = offset
             )
@@ -66,10 +69,26 @@ fun SubHeaderText(text: String) {
     )
 }
 
+@Composable
+fun NormalText(questionText: String){
+    Text(
+        text = questionText,
+        fontFamily = kanti,
+        color = Color.Black,
+        fontSize = 20.sp
+
+        )
+}
+
 
 @Composable
-fun CountDowntimerText(){
-    Text(text = "1:00")
+fun CountDownTimerText(){
+    Text(
+        text = "3:00",
+        fontWeight = FontWeight.Bold,
+        fontFamily = montserrat,
+        fontSize = 15.sp
+    )
 }
 
 @Composable
