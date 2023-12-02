@@ -10,6 +10,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -31,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import co.danjuma.brutalgenius.ui.theme.GreyColor
 import co.danjuma.brutalgenius.R
+import co.danjuma.brutalgenius.data.Question
 import co.danjuma.brutalgenius.ui.theme.TextGrey
 import co.danjuma.brutalgenius.ui.theme.kanti
 import co.danjuma.brutalgenius.ui.theme.montserrat
@@ -70,19 +74,35 @@ fun SubHeaderText(text: String) {
 }
 
 @Composable
-fun NormalText(questionText: String){
+fun NormalText(questionText: Question) {
     Text(
-        text = questionText,
+        text = questionText.questionText,
         fontFamily = kanti,
         color = Color.Black,
         fontSize = 20.sp
 
-        )
+    )
 }
 
 
 @Composable
-fun CountDownTimerText(){
+fun AnswerButton(answer: String, isCorrectAnswer: Boolean, onAnswerSelected: () -> Unit) {
+    Button(
+        onClick = onAnswerSelected,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = if (isCorrectAnswer) Color.Green else Color.White,
+            contentColor = Color.Black,
+            disabledContainerColor = Color.Gray,
+            disabledContentColor = Color.DarkGray
+        )
+    ) {
+        Text(text = answer)
+    }
+}
+
+
+@Composable
+fun CountDownTimerText() {
     Text(
         text = "3:00",
         fontWeight = FontWeight.Bold,

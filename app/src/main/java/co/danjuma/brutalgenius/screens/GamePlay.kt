@@ -15,10 +15,11 @@ import co.danjuma.brutalgenius.components.CountDownTimerText
 import co.danjuma.brutalgenius.components.HeaderText
 import co.danjuma.brutalgenius.components.NormalText
 import co.danjuma.brutalgenius.components.SubHeaderText
+import co.danjuma.brutalgenius.data.Question
 import co.danjuma.brutalgenius.ui.theme.BGYellow
 
 @Composable
-fun Gameplay() {
+fun Gameplay(questions: List<Question>) {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = BGYellow
@@ -30,6 +31,7 @@ fun Gameplay() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
+
             HeaderText(text = "Football Quiz")
 
             SubHeaderText("Brutal Genius 1/5")
@@ -40,7 +42,12 @@ fun Gameplay() {
 
             Spacer(modifier = Modifier.height(30.dp))
 
-            NormalText(questionText = "Different Questions")
+            questions.forEach { question ->
+
+                NormalText(questionText = question)
+                question.answers.forEachIndexed(1, answers ->)
+            }
+
 
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -53,5 +60,5 @@ fun Gameplay() {
 @Preview
 @Composable
 fun GamePlayPreview() {
-    Gameplay()
+   // Gameplay(Question)
 }
